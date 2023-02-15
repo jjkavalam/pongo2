@@ -9,12 +9,14 @@ func dedentHtmlTokens(tokens []*Token, dedentLength int) {
 		Typ: TokenHTML,
 		Val: "\n",
 	}
+	hasSeenFirstHtmlToken := false
 
 	inMacroScope := false
 
 	for _, token := range tokens {
 		if token.Typ == TokenIdentifier && token.Val == "macro" {
 			inMacroScope = true
+			hasSeenFirstHtmlToken = false
 		} else if token.Typ == TokenIdentifier && token.Val == "endmacro" {
 			inMacroScope = false
 		}
@@ -25,9 +27,11 @@ func dedentHtmlTokens(tokens []*Token, dedentLength int) {
 
 			// in addition, if this is the first HTML token in the macro block; also
 			// trim the starting newline
-			if prevToken.Typ == TokenSymbol && prevToken.Val == "%}" {
+			if prevToken.Typ == TokenSymbol && prevToken.Val == "%}" && !hasSeenFirstHtmlToken {
 				token.Val = trimStartingNewline(token.Val)
 			}
+
+			hasSeenFirstHtmlToken = true
 		}
 
 		prevToken = token
