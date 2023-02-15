@@ -84,6 +84,9 @@ func newTemplate(set *TemplateSet, name string, isTplString bool, tpl []byte) (*
 	}
 	t.tokens = tokens
 
+	// apply dedent
+	dedentHtmlTokens(tokens)
+
 	// For debugging purposes, show all tokens:
 	/*for i, t := range tokens {
 		fmt.Printf("%3d. %s\n", i, t)
