@@ -16,7 +16,7 @@ func Test_dedentHtmlTokens(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	dedentHtmlTokens(tokens, 4)
+	dedentHtmlTokens(tokens)
 
 	// when you get a run of HTML tokens
 	// find runs of HTML tokens and dedentAfterNewline it

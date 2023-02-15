@@ -4,7 +4,10 @@ import (
 	"strings"
 )
 
-func dedentHtmlTokens(tokens []*Token, dedentLength int) {
+// DedentWidth controls
+var DedentWidth = 2
+
+func dedentHtmlTokens(tokens []*Token) {
 	prevToken := &Token{
 		Typ: TokenHTML,
 		Val: "\n",
@@ -23,7 +26,7 @@ func dedentHtmlTokens(tokens []*Token, dedentLength int) {
 
 		if inMacroScope && token.Typ == TokenHTML {
 			// dedent HTML tokens
-			token.Val = dedentAfterNewline(token.Val, dedentLength)
+			token.Val = dedentAfterNewline(token.Val, DedentWidth)
 
 			// in addition, if this is the first HTML token in the macro block; also
 			// trim the starting newline

@@ -368,6 +368,7 @@ func TestTemplate_Functions(t *testing.T) {
 func TestTemplates(t *testing.T) {
 	// Add a global to the default set
 	pongo2.Globals["this_is_a_global_variable"] = "this is a global text"
+	pongo2.DedentWidth = 4
 
 	matches, err := filepath.Glob("./template_tests/*.tpl")
 	if err != nil {

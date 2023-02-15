@@ -82,7 +82,7 @@ func newTemplate(set *TemplateSet, name string, isTplString bool, tpl []byte) (*
 	if err != nil {
 		return nil, err
 	}
-	dedentHtmlTokens(tokens, 4)
+	dedentHtmlTokens(tokens)
 
 	t.tokens = tokens
 
