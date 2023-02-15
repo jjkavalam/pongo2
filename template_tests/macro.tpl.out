@@ -1,17 +1,12 @@
 Begin
 
-
 Greetings to  from john doe. Howdy, anonymous guest!
-
 
 Greetings to 10 from john doe. Howdy, anonymous guest!
 
-
 Greetings to john from john doe. Howdy, anonymous guest!
 
-
 Greetings to john from michelle. Howdy, anonymous guest!
-
 
 Greetings to john from michelle. Howdy, johann!
 
@@ -25,7 +20,6 @@ map[3] = good
 
 issue #39 (deactivate auto-escape of macros)
 
-
 <p>Hello Max.</p>
 
 
@@ -36,8 +30,6 @@ Importing macros
 <p>Hey Max!</p>
 
 Chaining macros
-
-
 One greeting: <p>Hey Dirk!</p> - <p>Hello mate!</p>
 
 End
