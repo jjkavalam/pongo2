@@ -8,16 +8,12 @@ type Options struct {
 
 	// If this is set to true leading spaces and tabs are stripped from the start of a line to a block. Defaults to false
 	LStripBlocks bool
-
-	// dedent macro blocks by said number of spaces
-	DedentMacro int
 }
 
 func newOptions() *Options {
 	return &Options{
 		TrimBlocks:   false,
 		LStripBlocks: false,
-		DedentMacro:  4,
 	}
 }
 
@@ -25,7 +21,6 @@ func newOptions() *Options {
 func (opt *Options) Update(other *Options) *Options {
 	opt.TrimBlocks = other.TrimBlocks
 	opt.LStripBlocks = other.LStripBlocks
-	opt.DedentMacro = other.DedentMacro
 
 	return opt
 }

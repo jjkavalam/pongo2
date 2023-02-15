@@ -82,6 +82,8 @@ func newTemplate(set *TemplateSet, name string, isTplString bool, tpl []byte) (*
 	if err != nil {
 		return nil, err
 	}
+	dedentHtmlTokens(tokens, 4)
+
 	t.tokens = tokens
 
 	// For debugging purposes, show all tokens:
@@ -126,8 +128,6 @@ func (tpl *Template) newContextForExecution(context Context) (*Template, *Execut
 			prev = t
 		}
 	}
-
-	dedentHtmlTokens(tpl.tokens, tpl.Options.DedentMacro)
 
 	// Determine the parent to be executed (for template inheritance)
 	parent := tpl
