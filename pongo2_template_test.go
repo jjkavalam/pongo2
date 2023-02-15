@@ -383,10 +383,8 @@ func TestTemplates(t *testing.T) {
 
 			// Read options from file
 			optsStr, _ := os.ReadFile(fmt.Sprintf("%s.options", match))
-			trimBlocks := strings.Contains(string(optsStr), "TrimBlocks=true")
 			lStripBlocks := strings.Contains(string(optsStr), "LStripBlocks=true")
 
-			tpl.Options.TrimBlocks = trimBlocks
 			tpl.Options.LStripBlocks = lStripBlocks
 
 			testFilename := fmt.Sprintf("%s.out", match)

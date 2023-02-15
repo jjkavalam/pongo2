@@ -1,4 +1,3 @@
 {{ number }}
-{{ "hello" }}
-11
+{{ "hello" }}11
 hello

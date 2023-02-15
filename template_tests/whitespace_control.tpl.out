@@ -1,36 +1,20 @@
 Standard whitespace control:
-
 Standard whitespace control
-
 
 Full Trim whitespace control:
 Full Trim whitespace control
-
-Useful with logic:
-3rd choice
-
+Useful with logic:3rd choice
 Cycle without whitespace control:
-
 1
-
 1
-
 2
-
 3
-
 5
-
 8
-
 13
-
 21
-
 34
-
 55
-
 
 Cycle with whitespace control:
 1
@@ -43,7 +27,6 @@ Cycle with whitespace control:
 21
 34
 55
-
 
 Trim everything:
 11235813213455
