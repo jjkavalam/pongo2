@@ -19,18 +19,3 @@ func testDedent(t *testing.T, s string, l int, expected string) {
 		}
 	})
 }
-
-func Test_measureIndent(t *testing.T) {
-	testMeasure(t, "\n b", 1)
-	testMeasure(t, " \n b", 1)
-	testMeasure(t, " \nb", 0)
-}
-
-func testMeasure(t *testing.T, s string, e int) {
-	t.Run(s, func(t *testing.T) {
-		m := measureIndent(s)
-		if m != e {
-			t.Errorf("got %d; want %d", m, e)
-		}
-	})
-}

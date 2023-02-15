@@ -32,21 +32,3 @@ func dedentAfterNewline(s string, l int) string {
 
 	return result
 }
-
-func measureIndent(s string) int {
-	// find first newline
-	firstNl := strings.Index(s, "\n")
-	if firstNl == -1 {
-		return 0
-	}
-	// count spaces after this
-	leadingSpaceCount := 0
-	for i := firstNl + 1; i < len(s); i++ {
-		if s[i] == ' ' {
-			leadingSpaceCount++
-		} else {
-			break
-		}
-	}
-	return leadingSpaceCount
-}
