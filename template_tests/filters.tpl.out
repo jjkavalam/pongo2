@@ -154,7 +154,9 @@ float
 5.000000
 5.000000
 -100.000000
-5.5 is 5.5000005.5 is not 5.500001
+5.5 is 5.500000
+5.5 is not 5.500001
+
 floatformat
 34.2
 34
@@ -186,6 +188,7 @@ Chinese: 你好世界
 make_list
 j, o, h, n,  , d, o, e
 john doe
+
 center
 'test'
 '        test       '
@@ -211,6 +214,7 @@ rjust
 wordcount
 0
 25
+
 wordwrap
 
 Lorem ipsum dolor sit amet,
@@ -219,6 +223,7 @@ tempor incidunt ut labore et
 dolore magna aliqua. Ut enim
 ad minim veniam, quis nostrud
 exercitation
+
 iriencode
 ?foo=123&amp;bar=yes
 
@@ -239,11 +244,14 @@ linenumbers
 8. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 9. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
 10. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
 phone2numeric
 999-766462
 
 truncatewords
-Lorem ipsum dolor sit amet, consectetur adipisici elit, sed ...10
+Lorem ipsum dolor sit amet, consectetur adipisici elit, sed ...
+10
+
 你好世界
 你好世界
 
@@ -251,6 +259,7 @@ urlize
 <a href="http://www.florian-schlachter.de" rel="nofollow">http://www.florian-schlachter.de</a>
 <a href="http://www.florian-schlachter.de" rel="nofollow">www.florian-schlachter.de</a>
 <a href="http://florian-schlachter.de" rel="nofollow">florian-schlachter.de</a>
+
 Please mail me at <a href="mailto:demo@example.com">demo@example.com</a> or visit mit on:
 - lorem ipsum <a href="http://github.com/flosch/pongo2" rel="nofollow">github.com/flosch/pongo2</a> lorem ipsum
 - lorem ipsum <a href="http://www.florian-schlachter.de" rel="nofollow">http://www.florian-schlachter.de</a> lorem ipsum
@@ -258,7 +267,9 @@ Please mail me at <a href="mailto:demo@example.com">demo@example.com</a> or visi
 - lorem ipsum <a href="https://www.florian-schlachter.de" rel="nofollow">https://www.florian-schlachter.de</a> lorem ipsum
 - lorem ipsum <a href="http://www.florian-schlachter.de" rel="nofollow">www.florian-schlachter.de</a> lorem ipsum
 - lorem ipsum <a href="http://www.florian-schlachter.de/test=%22test%22" rel="nofollow">www.florian-schlachter.de/test=&quot;test&quot;</a> lorem ipsum
+
 --
+
 Please mail me at <a href="mailto:demo@example.com">demo@example.com</a> or visit mit on:
 - lorem ipsum <a href="http://github.com/flosch/pongo2" rel="nofollow">github.com/flosch/pongo2</a> lorem ipsum
 - lorem ipsum <a href="http://www.florian-schlachter.de" rel="nofollow">http://www.florian-schlachter.de</a> lorem ipsum
@@ -267,7 +278,9 @@ Please mail me at <a href="mailto:demo@example.com">demo@example.com</a> or visi
 - lorem ipsum <a href="http://www.florian-schlachter.de" rel="nofollow">www.florian-schlachter.de</a> lorem ipsum
 - lorem ipsum <a href="http://www.florian-schlachter.de/test=%22test%22" rel="nofollow">www.florian-schlachter.de/test="test"</a> lorem ipsum
 
+
 urlizetrunc
+
 Please mail me at <a href="mailto:demo@example.com">demo@example...</a> or visit mit on:
 - lorem ipsum <a href="http://github.com/flosch/pongo2" rel="nofollow">github.com/f...</a> lorem ipsum
 - lorem ipsum <a href="http://www.florian-schlachter.de" rel="nofollow">http://www.f...</a> lorem ipsum
@@ -275,6 +288,7 @@ Please mail me at <a href="mailto:demo@example.com">demo@example...</a> or visit
 - lorem ipsum <a href="https://www.florian-schlachter.de" rel="nofollow">https://www....</a> lorem ipsum
 - lorem ipsum <a href="http://www.florian-schlachter.de" rel="nofollow">www.florian-...</a> lorem ipsum
 - lorem ipsum <a href="http://www.florian-schlachter.de/test=%22test%22" rel="nofollow">www.florian-...</a> lorem ipsum
+
 
 escapejs
 escape sequences \u000D\u000A\u005C\u0027\u005C\u0022 special chars \u0022\u003F\u0021\u003D\u0024\u003C\u003E

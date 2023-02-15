@@ -82,9 +82,7 @@ func newTemplate(set *TemplateSet, name string, isTplString bool, tpl []byte) (*
 	if err != nil {
 		return nil, err
 	}
-	// it is important to dedent first before removing newlines
 	dedentHtmlTokens(tokens, 4)
-	trimBlocks(tokens)
 
 	t.tokens = tokens
 
@@ -103,7 +101,7 @@ func newTemplate(set *TemplateSet, name string, isTplString bool, tpl []byte) (*
 }
 
 func (tpl *Template) newContextForExecution(context Context) (*Template, *ExecutionContext, error) {
-	if tpl.Options.LStripBlocks {
+	if tpl.Options.TrimBlocks || tpl.Options.LStripBlocks {
 		// Issue #94 https://github.com/flosch/pongo2/issues/94
 		// If an application configures pongo2 template to trim_blocks,
 		// the first newline after a template tag is removed automatically (like in PHP).
@@ -116,6 +114,14 @@ func (tpl *Template) newContextForExecution(context Context) (*Template, *Execut
 			if tpl.Options.LStripBlocks {
 				if prev.Typ == TokenHTML && t.Typ != TokenHTML && t.Val == "{%" {
 					prev.Val = strings.TrimRight(prev.Val, "\t ")
+				}
+			}
+
+			if tpl.Options.TrimBlocks {
+				if prev.Typ != TokenHTML && t.Typ == TokenHTML && prev.Val == "%}" {
+					if len(t.Val) > 0 && t.Val[0] == '\n' {
+						t.Val = t.Val[1:len(t.Val)]
+					}
 				}
 			}
 

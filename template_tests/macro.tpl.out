@@ -1,25 +1,43 @@
 Begin
+
+
 Greetings to  from john doe. Howdy, anonymous guest!
+
 
 Greetings to 10 from john doe. Howdy, anonymous guest!
 
+
 Greetings to john from john doe. Howdy, anonymous guest!
 
+
 Greetings to john from michelle. Howdy, anonymous guest!
+
 
 Greetings to john from michelle. Howdy, johann!
 
 
-map[0] = Hellomap[1] = 99map[2] = 3.140000map[3] = good
+
+
+map[0] = Hello
+map[1] = 99
+map[2] = 3.140000
+map[3] = good
+
 issue #39 (deactivate auto-escape of macros)
+
+
 <p>Hello Max.</p>
 
 
 Importing macros
+
 <p>Hey User1!</p>
 <p>Hey User2!</p>
 <p>Hey Max!</p>
 
-Chaining macrosOne greeting: <p>Hey Dirk!</p> - <p>Hello mate!</p>
+Chaining macros
+
+
+One greeting: <p>Hey Dirk!</p> - <p>Hello mate!</p>
 
 End

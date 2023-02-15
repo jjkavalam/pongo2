@@ -1,1 +1,4 @@
-{% url 'entry_list' %}{{}}{}{##}
+{% url 'entry_list' %}
+{{}}
+{}
+{##}
