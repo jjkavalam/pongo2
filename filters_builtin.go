@@ -509,10 +509,6 @@ func filterJoin(in *Value, param *Value) (*Value, *Error) {
 		return in, nil
 	}
 	sep := param.String()
-	if sep == "" {
-		// An empty string separator returns the input string.
-		return AsValue(in.String()), nil
-	}
 
 	sl := make([]string, 0, in.Len())
 
