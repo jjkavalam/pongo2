@@ -94,7 +94,8 @@ func newExecutionContext(tpl *Template, ctx Context) *ExecutionContext {
 
 func NewChildExecutionContext(parent *ExecutionContext) *ExecutionContext {
 	newctx := &ExecutionContext{
-		template: parent.template,
+		template:   parent.template,
+		macroDepth: parent.macroDepth,
 
 		Public:     parent.Public,
 		Private:    make(Context),
