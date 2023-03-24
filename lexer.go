@@ -152,6 +152,7 @@ func (l *lexer) emit(t TokenType) {
 		// Escape sequence \" in strings
 		tok.Val = strings.Replace(tok.Val, `\"`, `"`, -1)
 		tok.Val = strings.Replace(tok.Val, `\\`, `\`, -1)
+		tok.Val = strings.Replace(tok.Val, "\\n", "\n", -1)
 	}
 
 	if t == TokenSymbol && len(tok.Val) == 3 && (strings.HasSuffix(tok.Val, "-") || strings.HasPrefix(tok.Val, "-")) {
@@ -417,7 +418,7 @@ func (l *lexer) stateString() lexerStateFn {
 		case '\\':
 			// escape sequence
 			switch l.peek() {
-			case '"', '\\':
+			case '"', '\\', 'n':
 				l.next()
 			default:
 				return l.errorf("Unknown escape sequence: \\%c", l.peek())

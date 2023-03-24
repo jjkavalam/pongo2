@@ -365,6 +365,22 @@ func TestTemplate_Functions(t *testing.T) {
 	}
 }
 
+func Test_NewlineEscapes(t *testing.T) {
+	tpl, err := pongo2.FromString(`{{ list|join:"\n" }}`)
+	if err != nil {
+		t.Error(err)
+	}
+	execute, err := tpl.Execute(map[string]any{
+		"list": []string{"a", "b"},
+	})
+	if err != nil {
+		t.Error(err)
+	}
+	if execute != "a\nb" {
+		t.Errorf("want 'a\nb', got '%s'", execute)
+	}
+}
+
 func TestTemplates(t *testing.T) {
 	// Add a global to the default set
 	pongo2.Globals["this_is_a_global_variable"] = "this is a global text"
